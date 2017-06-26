@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie6"><![endif]-->
+<!--[if IE 7]><html class="ie7"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if gt IE 8]><html><![endif]-->
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans">
+		<style>
+		html { width: 100%; height: 100%; margin: 0; padding: 0; font-size: 100.01%; min-height: 580px; }
+
+		body { height: 100%; margin: 0; padding: 0; font-size: 12px; line-height: 1.2; font-family: 'Open Sans', sans-serif; background-repeat: no-repeat; background-position: 50% 0; }
+
+		article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+
+		ol, ul { list-style: none; margin: 0; padding: 0; }
+
+		table { border-collapse: collapse; border-spacing: 0; }
+
+		img { border: 0; }
+
+		a, a:focus, a img, a img:focus { border: 0 none; }
+
+		a:hover{text-decoration: none;}
+
+		a, a img, textarea, input { outline: 0 none; }
+
+		a:focus { outline: thin dotted; }
+
+		a { color: white; }
+
+		h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: 0; }
+
+		p { margin: 0; }
+
+		dl, dt, dd { margin: 0; }
+
+		textarea { overflow: auto; }
+
+		/* mixins */
+		.clearfix:before { content: ""; display: table; }
+
+		.clearfix:after { content: ""; display: table; clear: both; }
+
+		* { padding: 0; margin: 0; }
+
+		html, body { width: 100%; height: 100%; font-family: 'Open Sans', sans-serif; sans-serif; font-size: 16px; }
+
+		.wrapper { min-height: 100%; height: auto !important; width: 100%; background-color: #323232; }
+
+		.website { padding-left: 40px; padding-top: 50px; color: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+		.header { font-size: 22px; }
+
+		.list { padding-top: 50px; float: left; margin-right: 100px; }
+
+		.list h2 { font-weight: 400; font-size: 19px; padding-left: 10px; padding-bottom: 30px; }
+
+		.list__item { padding-left: 20px; font-weight: 300; padding-bottom: 15px; list-style: none; }
+
+		.list__link { color: inherit; }
+		</style>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<title><!-- inject:name --><!-- endinject --></title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="website">
+				<header class="header"><h1><!-- inject:name --><!-- endinject --></h1></header>
+				<div class="list">
+					<h2>Список страниц</h2>
+					<ul>
+						<!-- inject:html-->
+						<!-- endinject-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

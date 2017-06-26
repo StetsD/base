@@ -1,0 +1,19 @@
+//libs
+@import 'libs/mixins.scss';
+
+//configs
+@import 'configs/colors';
+@import 'configs/sizes';
+@import 'configs/fonts';
+
+//common
+@import 'commons/reset';
+@import 'commons/main';
+
+// components
+@import 'components/header';
+
+// pages
+@import 'pages/index';
+
+

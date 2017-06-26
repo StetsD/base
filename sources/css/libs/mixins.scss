@@ -1,0 +1,468 @@
+@mixin text-shadow ($string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: $string;
+}
+@mixin box-shadow ($string) {
+	-webkit-box-shadow: $string;
+	-moz-box-shadow:    $string;
+	box-shadow:         $string;
+}
+@mixin drop-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	-moz-box-shadow:	$x $y $blur $spread rgba(0, 0, 0, $alpha);
+	box-shadow:		$x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+@mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+	-webkit-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+	-moz-box-shadow:    inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+	box-shadow:         inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin box-sizing ($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing:    $type;
+	box-sizing:         $type;
+}
+
+@mixin border-radius ($radius: 5px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius:    $radius;
+	border-radius:         $radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+@mixin border-radiuses ($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+	-webkit-border-top-right-radius:    $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius:  $bottomleft;
+	-webkit-border-top-left-radius:     $topleft;
+
+	-moz-border-radius-topright:        $topright;
+	-moz-border-radius-bottomright:     $bottomright;
+	-moz-border-radius-bottomleft:      $bottomleft;
+	-moz-border-radius-topleft:         $topleft;
+
+	border-top-right-radius:            $topright;
+	border-bottom-right-radius:         $bottomright;
+	border-bottom-left-radius:          $bottomleft;
+	border-top-left-radius:             $topleft;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+@mixin opacity ($opacity: 0.5) {
+	-webkit-opacity: 	$opacity;
+	-moz-opacity: 		$opacity;
+	opacity: 		$opacity;
+}
+
+@mixin gradient ($startColor: #eee, $endColor: white) {
+	background-color: $startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+	background: -webkit-linear-gradient(top, $startColor, $endColor);
+	background: -moz-linear-gradient(top, $startColor, $endColor);
+	background: -ms-linear-gradient(top, $startColor, $endColor);
+	background: -o-linear-gradient(top, $startColor, $endColor);
+}
+@mixin horizontal-gradient ($startColor: #eee, $endColor: white) {
+	background-color: $startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+	background-image: -moz-linear-gradient(left, $startColor, $endColor);
+	background-image: -ms-linear-gradient(left, $startColor, $endColor);
+	background-image: -o-linear-gradient(left, $startColor, $endColor);
+}
+
+@mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease, $infinite: '', $direction: '') {
+	-webkit-animation: $name $duration $delay $ease unquote($infinite) unquote($direction);
+	-moz-animation:    $name $duration $delay $ease unquote($infinite) unquote($direction);
+}
+
+@mixin transition ($transition) {
+	-webkit-transition: $transition;
+	-moz-transition:    $transition;
+	-ms-transition:     $transition;
+	-o-transition:      $transition;
+}
+@mixin transition-transform ($arg) {
+	-webkit-transition: -webkit-transform $arg;
+	-moz-transition: -moz-transform $arg;
+	-o-transition: -o-transform $arg;
+	transition: transform $arg;
+
+	-webkit-transform: translatez(0);
+	-moz-transform: translatez(0);
+	-ms-transform: translatez(0);
+	-o-transform: translatez(0);
+	transform: translatez(0);
+}
+@mixin transform($string){
+	-webkit-transform: 	 $string;
+	-moz-transform: 	 $string;
+	-ms-transform: 		 $string;
+	-o-transform: 		 $string;
+	transform:			 $string;
+}
+@mixin scale ($factor1, $factor2) {
+	-webkit-transform: scale($factor1, $factor2);
+	-moz-transform: 	 scale($factor1, $factor2);
+	-ms-transform: 		 scale($factor1, $factor2);
+	-o-transform: 		 scale($factor1, $factor2);
+}
+@mixin  rotate ($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: 	 rotate($deg);
+	-ms-transform: 		 rotate($deg);
+	-o-transform: 		 rotate($deg);
+}
+@mixin  skew ($deg, $deg2) {
+	-webkit-transform:       skew($deg, $deg2);
+	-moz-transform: 	 skew($deg, $deg2);
+	-ms-transform: 		 skew($deg, $deg2);
+	-o-transform: 		 skew($deg, $deg2);
+}
+@mixin  translate ($x, $y:0) {
+	-webkit-transform:       translate($x, $y);
+	-moz-transform: 	 translate($x, $y);
+	-ms-transform: 		 translate($x, $y);
+	-o-transform: 		 translate($x, $y);
+}
+@mixin  translate3d ($x, $y: 0, $z: 0) {
+	-webkit-transform:       translate3d($x, $y, $z);
+	-moz-transform: 	 translate3d($x, $y, $z);
+	-ms-transform: 		 translate3d($x, $y, $z);
+	-o-transform: 		 translate3d($x, $y, $z);
+}
+@mixin  perspective ($value: 1000) {
+	-webkit-perspective: 	$value;
+	-moz-perspective: 	$value;
+	-ms-perspective: 	$value;
+	perspective: 		$value;
+}
+@mixin  transform-origin ($x:center, $y:center) {
+	-webkit-transform-origin: $x $y;
+	-moz-transform-origin:    $x $y;
+	-ms-transform-origin:     $x $y;
+	-o-transform-origin:      $x $y;
+}
+
+// family mixins
+
+/// Select all children from the first to `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin first($num) {
+	@if $num == 1 {
+		&:first-child {
+			@content;
+		}
+	}
+	@else {
+		&:nth-child(-n + #{$num}) {
+			@content;
+		}
+	}
+}
+
+/// Select all children from the last to `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin last($num) {
+	&:nth-last-child(-n + #{$num}) {
+		@content;
+	}
+}
+
+/// Select all children after the first to `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin after-first($num) {
+	&:nth-child(n + #{$num + 1}) {
+		@content;
+	}
+}
+
+/// Select all children before `$num` from the last.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin from-end($num) {
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
+}
+
+/// Select all children between `$first` and `$last`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin between($first, $last) {
+	&:nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
+}
+
+/// Select all even children between `$first` and `$last`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin even-between($first, $last) {
+	&:nth-child(even):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
+}
+
+/// Select all odd children between `$first` and `$last`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin odd-between($first, $last) {
+	&:nth-child(odd):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
+}
+
+/// Select all `$num` children between `$first` and `$last`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin n-between($num, $first, $last) {
+	&:nth-child(#{$num}n):nth-child(n + #{$first}):nth-child(-n + #{$last}) {
+		@content;
+	}
+}
+
+
+/// Select all children but `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin all-but($num) {
+	&:not(:nth-child(#{$num})) {
+		@content;
+	}
+}
+
+/// Select children each `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+/// @alias every
+@mixin each($num) {
+	&:nth-child(#{$num}n) {
+		@content;
+	}
+}
+
+/// Select children each `$num`.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin every($num) {
+	&:nth-child(#{$num}n) {
+		@content;
+	}
+}
+
+/// Select the `$num` child from the start and the `$num` child from the last.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin from-first-last($num) {
+	&:nth-child(#{$num}),
+	&:nth-last-child(#{$num}) {
+		@content;
+	}
+}
+
+
+/// Select the item in the middle of `$num` child. Only works with odd number
+/// chain.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin middle($num) {
+	&:nth-child(#{round($num / 2)}){
+		@content;
+	}
+}
+
+
+/// Select all children between the `$num` first and the `$num` last.
+/// @group with-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - id of the child
+@mixin all-but-first-last($num) {
+	&:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
+		@content;
+	}
+}
+
+
+/// This quantity-query mixin will only select the first of `$limit` items. It will not
+/// work if there is not as much as item as you set in `$limit`.
+/// @group Quantity queries
+/// @param {number} $limit
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin first-of($limit) {
+	&:nth-last-child(#{$limit}):first-child {
+		@content;
+	}
+}
+
+/// This quantity-query mixin will only select the last of `$limit` items. It will not
+/// if there is not as much as item as you set in `$limit`.
+/// @group Quantity queries
+/// @param {number} $limit
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin last-of($limit) {
+	&:nth-of-type(#{$limit}):nth-last-of-type(1) {
+		@content;
+	}
+}
+
+/// This quantity-query mixin will select every items if there is at least `$num` items. It will not
+/// if there is not as much as item as you set in `$num`.
+/// @group Quantity queries
+/// @param {number} $limit
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin at-least($num) {
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
+	&:nth-last-child(n + #{$num}),
+	&:nth-last-child(n + #{$num}) ~ #{$child} {
+		@content;
+	}
+}
+
+/// This quantity-query mixin will select every items if there is at most `$num` items. It will not
+/// if there is not as much as item as you set in `$num`.
+/// @group Quantity queries
+/// @param {number} $limit
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin at-most($num) {
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
+	&:nth-last-child(-n + #{$num}):first-child,
+	&:nth-last-child(-n + #{$num}):first-child ~ #{$child} {
+		@content;
+	}
+}
+
+/// This quantity-query mixin will select every items only if there is between `$min` and `$max` items.
+/// @group Quantity queries
+/// @param {number} $limit
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin in-between($min, $max) {
+	$selector: &;
+	$child: nth(nth($selector, -1), -1);
+	&:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child,
+	&:nth-last-child(n + #{$min}):nth-last-child(-n + #{$max}):first-child ~ #{$child} {
+		@content;
+	}
+}
+
+/// Select all even children.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin even() {
+	&:nth-child(even) {
+		@content;
+	}
+}
+
+/// Select all odd children.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin odd() {
+	&:nth-child(odd) {
+		@content;
+	}
+}
+
+/// Select only the first and last child.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin first-last() {
+	&:first-child,
+	&:last-child {
+		@content;
+	}
+}
+
+/// Will only select the child if it’s unique.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @alias only
+@mixin unique() {
+	&:only-child {
+		@content;
+	}
+}
+
+/// Will only select the child if it’s unique.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin only() {
+	&:only-child {
+		@content;
+	}
+}
+
+/// Will only select children if they are not unique. Meaning if there is at
+/// least 2 children, the style is applied.
+/// @group no-arguments
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin not-unique() {
+	&:not(:only-child) {
+		@content;
+	}
+}
+
+
+/// This mixin is used to automatically sort z-index in numerical order. But it
+/// can also sort them in anti-numerical order, depending the parameters you use.
+/// @group using functions
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+/// @param {number} $num - Number of children
+/// @param {string} $direction [forward] - Direction of the sort
+/// @param {number} $index [0] - Index of the sorting
+@mixin child-index($num, $direction: 'forward', $index: 0) {
+	@for $i from 1 through $num {
+		@if ($direction == 'forward') {
+			&:nth-child(#{$i}) {
+				z-index: order-index($i, $index);
+				@content;
+			}
+		} @else if ($direction == 'backward') {
+			&:nth-last-child(#{$i}) {
+				z-index: order-index($i, $index);
+				@content;
+			}
+		}
+	}
+}
+
+/// Used by the child-index mixin. It will returned the proper sorted numbers
+/// depending on the `$index` value.
+/// @access private
+/// @param {number} $num - Number of children
+/// @param {number} $index - Index of the sorting
+@function order-index($i, $index) {
+	@return ($index + $i);
+}
+
+// custom mixins
+
+@mixin color-debug ($r, $g, $b, $a) {
+//	background-color: rgba($r, $g, $b, $a);
+}
+
+@mixin background-img ($w, $h) {
+	width: $w;
+	height: $h;
+	background-size: $w $h;
+	background-repeat: no-repeat;
+}

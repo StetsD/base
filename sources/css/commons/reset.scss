@@ -1,0 +1,115 @@
+/* CSS Reset section */
+
+html {
+	width:100%;
+	height:100%;
+	margin: 0;
+	padding: 0;
+	font-size: 100.01%;
+	//min-width: 1000px;
+	min-height: 580px;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 1.2;
+	font-family: Arial, Helvetica, sans-serif;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	//	-webkit-transform:translate3d(0,0,0);
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	border: 0;
+}
+
+a, a:focus, a img, a img:focus {
+	border: 0 none;
+}
+
+a, a img, textarea, input {
+	outline: 0 none;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a {
+	color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+dl, dt, dd {
+	margin :0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+/* mixins */
+
+.clearfix {
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+a{
+	text-decoration:none;
+	&:focus{
+		outline:none;
+	}
+}
+
+img{
+	-webkit-user-select: none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	-khtml-user-drag:none;
+	-webkit-user-drag:none;
+}
+
+%clearfix{
+	&:before, &:after{
+		content: '';
+		display: table;
+	}
+	&:after{
+		clear:both;
+	}
+}
