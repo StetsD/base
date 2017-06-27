@@ -4,6 +4,7 @@ import abs from './func-tr/func-as-abstraction';
 import beh from './func-tr/func-as-behavior';
 import comp from './func-tr/func-comparator';
 import dataAbs from './func-tr/data-as-abstraction';
+// import appl from './func-tr/func-applicative';
 
 
 // abs.parseAge('frob');
