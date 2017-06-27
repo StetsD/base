@@ -5,7 +5,7 @@ import beh from './func-tr/func-as-behavior';
 import comp from './func-tr/func-comparator';
 import dataAbs from './func-tr/data-as-abstraction';
 // import appl from './func-tr/func-applicative';
-
+import closures from './func-tr/func-closures';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));
