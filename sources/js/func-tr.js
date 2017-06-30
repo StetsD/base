@@ -1,14 +1,15 @@
 'use strict';
 
-import abs from './func-tr/func-as-abstraction';
-import beh from './func-tr/func-as-behavior';
-import comp from './func-tr/func-comparator';
-import dataAbs from './func-tr/data-as-abstraction';
+// import abs from './func-tr/func-as-abstraction';
+// import beh from './func-tr/func-as-behavior';
+// import comp from './func-tr/func-comparator';
+// import dataAbs from './func-tr/data-as-abstraction';
 // import appl from './func-tr/func-applicative';
 // import closures from './func-tr/func-closures';
 // import closeAbs from './func-tr/closures-as-abs';
 // import fHigh from './func-tr/func-higher-order';
-import curry from './func-tr/curryng';
+// import curry from './func-tr/curryng';
+import partialApp from './func-tr/partial-application';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));
