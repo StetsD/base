@@ -51,7 +51,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.NoErrorsPlugin(),
+		// new webpack.NoErrorsPlugin(),
 
 		UglifyJsPlugin,
 
