@@ -13,18 +13,11 @@ let G = GulpLoadPlugins(config.GLP);
 
 
 //Specials Modules
-import webpack from 'webpack';
+import webpack from 'gulp-webpack';
 
 //Compile
 module.exports = (cb) => {
-	webpack(wOptions, function(err, stats){
-		if(err){
-			throw err;
-		}
-
-		if(!cb.called){
-			cb.called = true;
-			cb();
-		}
-	});
+	return gulp.src(SRC_DIR._BASE + SRC_DIR._JS + SRC_DIR._JS_INPUT)
+		.pipe(webpack(wOptions))
+		.pipe(gulp.dest(PUB_DIR._BASE + PUB_DIR._JS));
 }
