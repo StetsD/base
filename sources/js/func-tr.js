@@ -12,7 +12,8 @@
 // import partialApp from './func-tr/partial-application';
 // import purity from './func-tr/purity-immutability';
 // import purityObj from './func-tr/obj-immutability';
-import purityObj from './func-tr/recursions';
+// import recursions from './func-tr/recursions';
+import lazyChain from './func-tr/lazy-chain';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));
