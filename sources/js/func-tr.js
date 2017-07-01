@@ -11,7 +11,8 @@
 // import curry from './func-tr/curryng';
 // import partialApp from './func-tr/partial-application';
 // import purity from './func-tr/purity-immutability';
-import purity from './func-tr/obj-immutability';
+// import purityObj from './func-tr/obj-immutability';
+import purityObj from './func-tr/recursions';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));
