@@ -6,7 +6,7 @@ let {SRC_DIR, PUB_DIR} = config;
 
 const path = require('path');
 const webpack = require('webpack');
-
+console.log(path.resolve(__dirname, SRC_DIR._BASE + SRC_DIR._JS))
 let UglifyJsPlugin = (!config.NODE_ENV) ?
 	new webpack.optimize.UglifyJsPlugin({
 		minimize: true,
@@ -18,6 +18,7 @@ module.exports = {
 	context: path.resolve(__dirname, SRC_DIR._BASE + SRC_DIR._JS),
 	entry: {
 		index: './index.js',
+		'func-tr': './func-tr.js'
 	},
 	output: {
 		path: path.resolve(__dirname, PUB_DIR._BASE + PUB_DIR._JS),
@@ -50,7 +51,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.NoErrorsPlugin(),
+		// new webpack.NoErrorsPlugin(),
 
 		UglifyJsPlugin,
 
