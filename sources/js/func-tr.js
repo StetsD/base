@@ -15,7 +15,8 @@
 // import recursions from './func-tr/recursions';
 // import lazyChain from './func-tr/lazy-chain';
 // import lazyChainPromise from './func-tr/lazy-chain-promise';
-import compose from './func-tr/func-composition';
+// import compose from './func-tr/func-composition';
+import yFuncProgEx from './func-tr/yFuncProgEx';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));
