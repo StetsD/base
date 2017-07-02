@@ -13,7 +13,9 @@
 // import purity from './func-tr/purity-immutability';
 // import purityObj from './func-tr/obj-immutability';
 // import recursions from './func-tr/recursions';
-import lazyChain from './func-tr/lazy-chain';
+// import lazyChain from './func-tr/lazy-chain';
+// import lazyChainPromise from './func-tr/lazy-chain-promise';
+import compose from './func-tr/func-composition';
 
 // abs.parseAge('frob');
 // console.log(beh([1,2,3], 1));

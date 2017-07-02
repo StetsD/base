@@ -69,4 +69,4 @@ var defferedChain = new LazyChain([2,1,3])
     })
     .invoke('join', ' ');
 
-defferedChain.run();
+console.log(defferedChain.run());
