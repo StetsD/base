@@ -18,7 +18,8 @@ module.exports = {
 	context: path.resolve(__dirname, SRC_DIR._BASE + SRC_DIR._JS),
 	entry: {
 		index: './index.js',
-		'func-tr': './func-tr.js'
+		'func-tr': './func-tr.js',
+		'red-of': './red-of'
 	},
 	output: {
 		path: path.resolve(__dirname, PUB_DIR._BASE + PUB_DIR._JS),
