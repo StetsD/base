@@ -12,7 +12,7 @@ $(function(){
 
 
     store.subscribe(()=>{
-        console.log(store.getState().reducerButton);
-        console.log(store.getState().reducerInput);
+        // console.log(store.getState().reducerButton);
+        // console.log(store.getState().reducerInput);
     });
 })

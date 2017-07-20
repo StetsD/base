@@ -10,6 +10,15 @@ export function mClick(data){
 		}
 	}
 }
+
+export function mDownAsync(data){
+	return dispatch => {
+		setTimeout(()=>{
+			dispatch(mDown(data))
+		}, 200);
+	}
+}
+
 export function mDown(data){
 	return {
 		type: M_DOWN,
@@ -35,6 +44,7 @@ export class Button {
 
 
 	_handleMouseDown(){
+		this.store.dispatch(mDownAsync('someAsyncData'));
 		this.store.dispatch(mDown('somedata'));
 	}
 
