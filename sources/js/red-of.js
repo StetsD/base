@@ -17,21 +17,13 @@ $(function(){
     });
 })
 
+let log = data => () => {
 
-
-let f1 = data => () => {
-	console.log(data);
-	data = data * 10;
-	console.log(data);
-	return data;
 }
 
-let f2 = data => () => {
-	console.log(data);
-	data = data + 5;
-	console.log(data);
-	return data;
-}
+let f1 = data => data * 10;
+
+let f2 = data => data + 5;
 
 function app(data, func){
 	let fa;
@@ -39,9 +31,10 @@ function app(data, func){
 	func.forEach(f => {
 		let newF = f(mutData ? mutData : data);
 
-		mutData = newF();
+		mutData = newF;
+	});
 
-	})
+	return mutData;
 }
 
-app(10, [f1, f2])
+console.log(app(10, [f1, f2]))
