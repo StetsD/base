@@ -17,24 +17,25 @@ $(function(){
     });
 })
 
-let log = data => () => {
-
-}
+let log = (func, data) => console.log(func, data);
 
 let f1 = data => data * 10;
 
 let f2 = data => data + 5;
 
-function app(data, func){
-	let fa;
+function app(data, func, mid){
 	let mutData;
-	func.forEach(f => {
-		let newF = f(mutData ? mutData : data);
 
+	func.forEach(f => {
+		mid("Entry:" + f.toString().match(/^function\s(\w)+/)[0].replace(/function/g, ''), mutData || data);
+
+		let newF = f(mutData ? mutData : data);
 		mutData = newF;
+
+		mutData && mid("Output:" + f.toString().match(/^function\s(\w)+/)[0].replace(/function/g, ''), mutData);
 	});
 
 	return mutData;
 }
 
-console.log(app(10, [f1, f2]))
+app(10, [f1, f2], log)
