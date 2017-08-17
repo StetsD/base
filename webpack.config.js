@@ -19,7 +19,8 @@ module.exports = {
 	entry: {
 		index: './index.js',
 		'func-tr': './func-tr.js',
-		'red-of': './red-of'
+		'red-of': './red-of',
+		'mvc': './mvc'
 	},
 	output: {
 		path: path.resolve(__dirname, PUB_DIR._BASE + PUB_DIR._JS),
